@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Md. Abdullah Al Mahmud | Portfolio</title>
   <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      --accent-blue: #38bdf8;
+      --accent-purple: #c084fc;
+      --accent-pink: #f472b6;
+      --glass-bg: rgba(30, 41, 59, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,112 +24,143 @@
     }
 
     body {
-      background-color: #0f172a;
-      color: #f8fafc;
+      background: var(--bg-gradient);
+      color: var(--text-main);
       line-height: 1.6;
+      min-height: 100vh;
       overflow-x: hidden;
     }
 
+    /* হেডার ডিজাইন */
     header {
-      background-color: #1e293b;
-      padding: 2rem 1rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 3rem 1.5rem;
       text-align: center;
-      border-bottom: 2px solid #38bdf8;
+      border-bottom: 1px solid var(--glass-border);
       animation: fadeInDown 1.2s ease-out;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      color: #38bdf8;
-      margin-bottom: 0.5rem;
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.8rem;
     }
 
     header p {
-      font-size: 1.2rem;
-      color: #94a3b8;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
     }
 
+    /* কন্টেইনার ও সেকশন layout */
     .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1.2rem;
     }
 
     section {
-      background-color: #1e293b;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      border: 1px solid #334155;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     }
 
-    /* বাম দিক থেকে অ্যানিমেশন */
+    /* অ্যানিমেশন ট্রানজিশন */
     #about {
-      animation: slideInLeft 1.2s ease-out;
+      animation: slideInLeft 1s ease-out;
     }
 
-    /* ডান দিক থেকে অ্যানিমেশন */
     #skills {
-      animation: slideInRight 1.2s ease-out;
+      animation: slideInRight 1s ease-out;
     }
 
-    /* নিচ থেকে অ্যানিমেশন */
     #projects {
-      animation: fadeInUp 1.2s ease-out;
+      animation: fadeInUp 1s ease-out;
     }
 
     h2 {
-      color: #38bdf8;
-      border-bottom: 2px solid #334155;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border-bottom: 2px solid rgba(56, 189, 248, 0.2);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.5rem;
     }
 
+    p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    /* গ্রিড ও প্রফেশনাল কার্ডসমূহ */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1.2rem;
     }
 
     .skill-card {
-      background-color: #0f172a;
-      padding: 0.8rem;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 1rem;
       text-align: center;
-      border-radius: 6px;
-      border: 1px solid #38bdf8;
-      color: #e2e8f0;
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      border: 1px solid var(--glass-border);
+      color: var(--accent-blue);
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .skill-card:hover {
       transform: translateY(-5px);
+      border-color: var(--accent-purple);
+      box-shadow: 0 8px 25px rgba(192, 132, 252, 0.3);
+      color: #fff;
     }
 
     .project-card {
-      background-color: #0f172a;
-      border: 1px solid #334155;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--glass-border);
       padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent-blue);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.2);
     }
 
     .project-card h3 {
-      color: #38bdf8;
+      color: var(--accent-purple);
       margin-bottom: 0.5rem;
     }
 
     .project-card p {
-      color: #cbd5e1;
+      color: var(--text-muted);
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
-      color: #64748b;
-      font-size: 0.9rem;
+      padding: 2.5rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--glass-border);
+      margin-top: 2rem;
     }
 
-    /* Keyframe Animations */
+    /* Keyframes definition */
     @keyframes fadeInDown {
       from {
         opacity: 0;
@@ -133,7 +175,7 @@
     @keyframes slideInLeft {
       from {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-60px);
       }
       to {
         opacity: 1;
@@ -144,7 +186,7 @@
     @keyframes slideInRight {
       from {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(60px);
       }
       to {
         opacity: 1;
@@ -155,7 +197,7 @@
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(40px);
       }
       to {
         opacity: 1;
@@ -174,7 +216,7 @@
   <div class="container">
     <section id="about">
       <h2>আমার সম্পর্কে</h2>
-      <p>আমি একজন ওয়েব ডেভেলপমেন্ট এবং ডাটা অ্যানালাইসিস অনুরাগী। নতুন প্রযুক্তির সাথে কাজ করতে এবং রেসপন্সিভ ওয়েব অ্যাপ্লিকেশন তৈরি করতে ভালোবাসি।</p>
+      <p>আমি একজন ওয়েব ডেভেলপমেন্ট এবং ডাটা অ্যানালাইসিস অনুরাগী। নতুন প্রযুক্তির সাথে কাজ করতে এবং আধুনিক ও রেসপন্সিভ ওয়েব অ্যাপ্লিকেশন তৈরি করতে ভালোবাসি।</p>
     </section>
 
     <section id="skills">
