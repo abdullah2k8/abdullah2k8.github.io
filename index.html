@@ -1,143 +1,209 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md. Abdullah Al Mahmud | Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md. Abdullah Al Mahmud | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            line-height: 1.6;
-        }
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        header {
-            background-color: #1e293b;
-            padding: 2rem 1rem;
-            text-align: center;
-            border-bottom: 2px solid #38bdf8;
-        }
+    header {
+      background-color: #1e293b;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid #38bdf8;
+      animation: fadeInDown 1.2s ease-out;
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            color: #38bdf8;
-            margin-bottom: 0.5rem;
-        }
+    header h1 {
+      font-size: 2.5rem;
+      color: #38bdf8;
+      margin-bottom: 0.5rem;
+    }
 
-        header p {
-            font-size: 1.2rem;
-            color: #94a3b8;
-        }
+    header p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+    }
 
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
 
-        section {
-            background-color: #1e293b;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-        }
+    section {
+      background-color: #1e293b;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      border: 1px solid #334155;
+    }
 
-        h2 {
-            font-size: 1.8rem;
-            color: #38bdf8;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 0.5rem;
-        }
+    /* বাম দিক থেকে অ্যানিমেশন */
+    #about {
+      animation: slideInLeft 1.2s ease-out;
+    }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-        }
+    /* ডান দিক থেকে অ্যানিমেশন */
+    #skills {
+      animation: slideInRight 1.2s ease-out;
+    }
 
-        .skill-card {
-            background-color: #334155;
-            padding: 1rem;
-            text-align: center;
-            border-radius: 8px;
-            font-weight: bold;
-            color: #f1f5f9;
-        }
+    /* নিচ থেকে অ্যানিমেশন */
+    #projects {
+      animation: fadeInUp 1.2s ease-out;
+    }
 
-        .project-card {
-            background-color: #0f172a;
-            border: 1px solid #334155;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
+    h2 {
+      color: #38bdf8;
+      border-bottom: 2px solid #334155;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
 
-        .project-card h3 {
-            color: #38bdf8;
-            margin-bottom: 0.5rem;
-        }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+    }
 
-        .project-card p {
-            color: #cbd5e1;
-        }
+    .skill-card {
+      background-color: #0f172a;
+      padding: 0.8rem;
+      text-align: center;
+      border-radius: 6px;
+      border: 1px solid #38bdf8;
+      color: #e2e8f0;
+      transition: transform 0.3s ease;
+    }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-    </style>
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card {
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      color: #38bdf8;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      color: #cbd5e1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Md. Abdullah Al Mahmud</h1>
-        <p>Web Developer & Data Enthusiast</p>
-    </header>
+  <header>
+    <h1>Md. Abdullah Al Mahmud</h1>
+    <p>Web Developer & Data Enthusiast</p>
+  </header>
 
-    <div class="container">
-        <section id="about">
-            <h2>আমার সম্পর্কে</h2>
-            <p>আমি একজন ওয়েব ডেভেলপমেন্ট এবং ডাটা এনালাইসিস অনুরাগী। নতুন প্রযুক্তির সাথে কাজ করতে এবং রেসপন্সিভ ওয়েব অ্যাপ্লিকেশন তৈরি করতে ভালোবাসি।</p>
-        </section>
+  <div class="container">
+    <section id="about">
+      <h2>আমার সম্পর্কে</h2>
+      <p>আমি একজন ওয়েব ডেভেলপমেন্ট এবং ডাটা অ্যানালাইসিস অনুরাগী। নতুন প্রযুক্তির সাথে কাজ করতে এবং রেসপন্সিভ ওয়েব অ্যাপ্লিকেশন তৈরি করতে ভালোবাসি।</p>
+    </section>
 
-        <section id="skills">
-            <h2>দক্ষতা (Skills)</h2>
-            <div class="skills-grid">
-                <div class="skill-card">HTML5</div>
-                <div class="skill-card">CSS3</div>
-                <div class="skill-card">Python</div>
-                <div class="skill-card">Pandas</div>
-                <div class="skill-card">Git & GitHub</div>
-            </div>
-        </section>
+    <section id="skills">
+      <h2>দক্ষতা (Skills)</h2>
+      <div class="skills-grid">
+        <div class="skill-card">HTML5</div>
+        <div class="skill-card">CSS3</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">Pandas</div>
+        <div class="skill-card">Git & GitHub</div>
+      </div>
+    </section>
 
-        <section id="projects">
-            <h2>প্রজেক্টসমূহ</h2>
-            <div class="project-card">
-                <h3>AuraX - E-Commerce Template</h3>
-                <p>একটি রেসপন্সিভ ই-কমার্স স্টোরফ্রন্ট টেমপ্লেট যা আধুনিক HTML এবং CSS দিয়ে তৈরি।</p>
-            </div>
-            <div class="project-card">
-                <h3>Global Natural Disasters Dashboard</h3>
-                <p>Python (Pandas, Matplotlib, Seaborn) ব্যবহার করে তৈরি ঐতিহাসিক ডাটা ভিজ্যুয়ালাইজেশন প্রজেক্ট।</p>
-            </div>
-        </section>
-    </div>
+    <section id="projects">
+      <h2>প্রজেক্টসমূহ</h2>
+      <div class="project-card">
+        <h3>AuraX - E-Commerce Template</h3>
+        <p>একটি রেসপন্সিভ ই-কমার্স স্টোরফ্রন্ট টেমপ্লেট যা আধুনিক HTML এবং CSS দিয়ে তৈরি।</p>
+      </div>
+      <div class="project-card">
+        <h3>Global Natural Disasters Dashboard</h3>
+        <p>Python (Pandas, Matplotlib, Seaborn) ব্যবহার করে তৈরি ঐতিহাসিক ডাটা ভিজ্যুয়ালাইজেশন প্রজেক্ট।</p>
+      </div>
+    </section>
+  </div>
 
-    <footer>
-        <p>&copy; 2026 Md. Abdullah Al Mahmud. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2026 Md. Abdullah Al Mahmud. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
